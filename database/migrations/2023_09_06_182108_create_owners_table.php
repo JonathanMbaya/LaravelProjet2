@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
+            $table->string('name');
             $table->string('email');
             $table->string('password');
             $table->decimal('wallet')->nullable();
