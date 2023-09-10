@@ -4,6 +4,6 @@
 
 @section('content')
 
-    <h1>NFT {{}}</h1>
+    <h1>NFT Détail</h1>
 
 @endsection
