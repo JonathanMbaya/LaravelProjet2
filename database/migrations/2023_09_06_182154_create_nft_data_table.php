@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nft_data', function (Blueprint $table) {
+        Schema::create('nfts', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('title');
             $table->string('artist');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nft_data');
+        Schema::dropIfExists('nfts');
     }
 };

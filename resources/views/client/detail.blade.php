@@ -1,9 +1,9 @@
 @extends('base')
 
-@section ('title', 'Accueil du blog')
+@section ('title', 'Détails -')
 
 @section('content')
 
-    <h1>NFT Détail</h1>
+    <h1>{{$nft->title}}</h1>
 
 @endsection

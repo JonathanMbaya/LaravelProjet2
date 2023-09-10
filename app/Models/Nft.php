@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Users;
+use App\Models\Owners;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,8 +16,8 @@ class Nft extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function owner():BelongsTo
+    public function owners():BelongsTo
     {
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(Owners::class);
     }
 }

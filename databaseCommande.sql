@@ -61,7 +61,7 @@ ALTER TABLE users ADD CONSTRAINT fk_title_nft FOREIGN KEY (nft_obtains)  REFEREN
 
 -- Inserer les données de la table  nft_data
 
-INSERT INTO nft_data (id,title,artist, description, url, standard, prix, image,category)
+INSERT INTO nfts (id,title,artist, description, url, standard, prix, image,category)
  VALUES
  (  1,
     "Monumental",
@@ -224,8 +224,3 @@ INSERT INTO category(name)
 
 
 -- Inserer les données de la table owners
-INSERT INTO category(name)
- VALUES ("Collectible"),
-("Metaverse"),
-("Utilitaire"),
-("Jeux vidéo online");
