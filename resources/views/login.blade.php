@@ -8,7 +8,8 @@
         <h1>Connexion</h1>
     </div>
 
-    <form class="form-login" action="">
+    <form class="form-login" action="/connexion/user" method="post">
+        @csrf
         <div class="group-area">
             <input type="text" name="email" id="email" placeholder="email">
         </div>
@@ -17,8 +18,14 @@
             <input type="password" name="password" id="password" placeholder="password">
         </div>
 
-        <input class="btn-submit" type="button" value="Se connecter">
+        <input class="btn-submit" type="submit" value="Se connecter">
     </form>
+
+    @if (session('status'))
+        <a href="">
+            <p style="text-align: center">{{ session('status')}}</p>
+        </a>
+    @endif
 
     <div>
         <p style="text-align: center">

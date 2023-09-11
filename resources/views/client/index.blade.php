@@ -1,25 +1,25 @@
 @extends('base')
 
-@section ('title', 'Accueil du blog')
+@section ('title', 'Home - NFT Market')
 
 @section('content')
 
     <h1>NFT Store</h1>
 
-    <div class="all-nft col-12">
+    <div class="all-nft">
 
 
     @foreach ($nfts as $nftOne)
-        <p>This is user {{ $nftOne->title }}</p>
 
-        <div class="card-nft">
+        <div class="card-nft col-md-4">
+            <p>{{ $nftOne->title }}</p>
 
             <figure>
-                <img class="col-3" src="{{$nftOne->image}}">
+                <img class="col-md-12 img-fluid"  src="{{$nftOne->image}}">
             </figure>
 
             <a class="nav-link" href={{route('detail', ['id' => $nftOne->id])}}>
-                <button class="btn-detail">
+                <button class="btn-detail col-md-12">
                     Voir détails
                 </button>
             </a>

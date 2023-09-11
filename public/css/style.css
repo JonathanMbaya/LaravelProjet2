@@ -5,9 +5,10 @@ nav{
 
 body {
     background-color: #1E1E1E !important;
+    font-family: 'Oswald', sans-serif !important;
 }
 
-h1
+h1,h2,h3
 {
     color: white;
 }
@@ -40,6 +41,7 @@ fieldset{
 }
 
 h1{
+    margin-top: 10rem !important;
     font-size: 5.5rem !important;
 }
 
@@ -58,6 +60,11 @@ h4{
 p{
     font-size: 2rem !important;
 
+}
+
+a{
+    text-decoration: none;
+    color: white !important;
 }
 
 li{
@@ -139,3 +146,67 @@ p{
     color: white;
 }
 
+
+/* Theme Nav */
+.logo-nft{
+    height: 5rem;
+    width: 5rem;
+}
+.nav-nav{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Home */
+
+.all-nft{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-nft{
+    height: 30rem;
+    width: 30rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.card-nft a{
+    background-color: #717171;
+    padding-top: 1.5rem ;
+    padding-bottom: 1.5rem;
+    border-radius: 0 0 2rem 2rem ;
+    font-size: 2rem ;
+}
+
+.card-nft figure img, figure, .card-nft a {
+    width: 30rem;
+}
+
+.card-nft figure img, figure{
+    height: 30rem;
+    border-radius: 2rem 2rem 0 0;
+    margin-top: 1rem;
+}
+
+.btn-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Details CSS */
+
+
+.details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

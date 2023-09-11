@@ -10,6 +10,12 @@ class Owners extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
     public function collection(){
         return $this -> hasMany(Nft::class);
     }

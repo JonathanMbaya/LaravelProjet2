@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\RouteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/connexion', function () {
-    return view('login');
-})->name('login');
+Route::get('/inscription', [OwnerController::class, 'signup'])->name('signup');
 
-Route::get('/inscription', function () {
-    return view('signup');
-})->name('signup');
+Route::post('/inscription/register', [OwnerController::class, 'form_register']);
+
+Route::get('/connexion', [OwnerController::class, 'login'])->name('login');
+
+Route::post('/connexion/user', [OwnerController::class, 'form_login']);
+
+Route::get('/redirect', function(){
+    return view('redirect');
+});
+
+Route::get('/déconnexion', [OwnerController::class, 'logout'])->name('logout');
+
+
+
+
+
 
 
 Route::get('/', [\App\Http\Controllers\RouteController::class, 'index'])->name('index');

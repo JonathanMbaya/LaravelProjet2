@@ -12,6 +12,8 @@ use Illuminate\View\View;
 
 class RouteController extends Controller
 {
+
+    // Fonction route page d'accueil , récuprération de la liste de NFT
     public function index():View {
 
         $nfts = Nft::all();
@@ -22,6 +24,8 @@ class RouteController extends Controller
     }
 
 
+
+    // Fonction route page détail , récuprération information d'un NFT avec l'id
     public function detail($id):View
 
     {
@@ -34,6 +38,22 @@ class RouteController extends Controller
             );
 
         return $nft;
+    }
+
+
+    // Fonction route page de collection, récuprération de la liste de NFT acheté
+
+    public function collection():View {
+
+        if ($request-> session()->get('owners')){
+            return view('collection')-> with('owners');
+        }
+
+        else{
+            return view('collection');
+        }
+
+
     }
 
 
