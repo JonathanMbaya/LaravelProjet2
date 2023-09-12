@@ -14,6 +14,9 @@ class Category extends Model
          *
          * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */
+
+        // Relation avec la table NFT
+        // Une catégory  peut posséder plusieurs Nft
         public function nft(): HasMany
         {
             return $this->hasMany(Nft::class);

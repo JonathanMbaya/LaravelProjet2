@@ -4,7 +4,15 @@
 
 @section('content')
 
+
+    <p>Bonjour, {{session('owners')->name}} </p>
+
+
+
     <h1>NFT Store</h1>
+
+
+
 
     <div class="all-nft">
 
@@ -12,7 +20,6 @@
     @foreach ($nfts as $nftOne)
 
         <div class="card-nft col-md-4">
-            <p>{{ $nftOne->title }}</p>
 
             <figure>
                 <img class="col-md-12 img-fluid"  src="{{$nftOne->image}}">
@@ -23,6 +30,10 @@
                     Voir détails
                 </button>
             </a>
+
+            <p class="text-title">{{ $nftOne->title }}</p>
+            <p class="text-artist">Artiste : {{ $nftOne->artist }}</p>
+            <p class="text-price">{{ $nftOne->prix }} ETH</p>
 
         </div>
     @endforeach

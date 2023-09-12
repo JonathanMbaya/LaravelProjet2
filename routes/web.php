@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\FilterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use App\Http\Controllers\RouteController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+// L'ensemble des routes pour la connexion
 
 Route::get('/inscription', [OwnerController::class, 'signup'])->name('signup');
 
@@ -33,15 +37,19 @@ Route::get('/déconnexion', [OwnerController::class, 'logout'])->name('logout');
 
 
 
+// L'ensemble des routes pour la navigation d'un utilisateur
+
+Route::get('/', [RouteController::class, 'index'])->name('index');
+
+Route::get('/collection',  [RouteController::class, 'collection'])->name('collection');
+
+Route::get('/{id}', [RouteController::class, 'detail'])->name('detail');
 
 
-Route::get('/', [\App\Http\Controllers\RouteController::class, 'index'])->name('index');
 
-Route::get('/detail/{id}', [\App\Http\Controllers\RouteController::class, 'detail'])->name('detail');
 
-Route::get('/collection', function () {
-    return view('client/collection');
-})->name('collection');
+// Partie admin
+
 
 
 

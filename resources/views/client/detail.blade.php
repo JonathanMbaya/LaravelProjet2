@@ -1,19 +1,27 @@
 @extends('base')
 
-@section ('title', 'Détails {{$nft->title}}')
+@section ('title', 'Détails')
 
 @section('content')
 
-    <h1>Détails - {{$nft->title}}</h1>
+    <h1>Détails</h1>
 
-    <div class="details">
+    <div class="details col-12">
 
-        <figure>
-            <img src="{{$nft->image}}" alt="image-details-nft">
-        </figure>
+        <div class="card-nft col-md-4 col-12">
+
+            <figure>
+                <img class="col-md-6 col-12 img-fluid"  src="{{$nft->image}}">
+            </figure>
+            <a class="nav-link" href="">
+                <button class="btn-detail col-md-12">
+                    Acheter
+                </button>
+            </a>
+        </div>
 
 
-        <div class="info-nft">
+        <div class="info-nft col-md-6 col-12">
 
             <h2>Informations supplémentaires</h2>
 

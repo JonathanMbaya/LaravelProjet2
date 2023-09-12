@@ -14,13 +14,24 @@ class RouteController extends Controller
 {
 
     // Fonction route page d'accueil , récuprération de la liste de NFT
-    public function index():View {
+    public function index(Request $request):View {
 
         $nfts = Nft::all();
 
-        return view('client/index', [
-            'nfts' => $nfts
-        ]);
+        if ($request-> session()->get('owners')){
+            return view('client/index', [
+                'nfts' => $nfts
+            ])->with('owners');
+        }
+
+        else {
+            return view('client/index', [
+                'nfts' => $nfts
+            ]);
+
+        }
+
+
     }
 
 
@@ -43,14 +54,14 @@ class RouteController extends Controller
 
     // Fonction route page de collection, récuprération de la liste de NFT acheté
 
-    public function collection():View {
+    public function collection(Request $request):View {
 
         if ($request-> session()->get('owners')){
-            return view('collection')-> with('owners');
+            return view('client/collection')-> with('owners');
         }
 
         else{
-            return view('collection');
+            return view('client/collection');
         }
 
 

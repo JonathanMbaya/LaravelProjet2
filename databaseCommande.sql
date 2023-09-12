@@ -83,7 +83,7 @@ INSERT INTO nfts (id,title,artist, description, url, standard, prix, image,categ
     "images/nft-02.jpg",
     "collectible"),
 
-(   3,
+ (  3,
     "THE DIP",
     "bigcomic",
     "I fear no man, no beast, no evil, or DIP brother. When Hulk Hogan buys the dip. Digital painting",
@@ -222,5 +222,3 @@ INSERT INTO category(name)
 ("Utilitaire"),
 ("Jeux vidéo online");
 
-
--- Inserer les données de la table owners

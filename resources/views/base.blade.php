@@ -48,8 +48,8 @@
 
         <div class="nav-identify">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('login')}}">
-                    <button type="button" class="btn btn-primary">Connexion</button>
+                <a class="nav-link active" aria-current="page" href="{{route('logout')}}">
+                    <button type="button" class="btn btn-primary">Déconnexion</button>
                 </a>
             </li>
         </div>

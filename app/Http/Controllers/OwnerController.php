@@ -62,7 +62,7 @@ class OwnerController extends Controller
             if(Hash::check($request->input('password'), $owners->password)){
                 $request-> session()->put('owners', $owners);
 
-                return redirect('/collection');
+                return redirect('/');
             }else{
                 return back()-> with('status', "Identifiant ou mot de passe incorrect");
             }
@@ -73,8 +73,6 @@ class OwnerController extends Controller
         }
     }
 
-
-
     // Fonction route de déconnexion
 
     public function logout(Request $request) {
@@ -82,4 +80,6 @@ class OwnerController extends Controller
 
         return redirect ('/connexion')->with('status', 'Vous venez de vous déconnecter');
     }
+
+
 }

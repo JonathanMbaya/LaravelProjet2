@@ -161,15 +161,38 @@ p{
     justify-content: space-between;
 }
 
+.nav-identify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Home */
 
 .all-nft{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
+.filter {
+    display: flex;
+    justify-content: space-around;
+    background-color: none !important;
+    color: white;
+}
+
+.filter li {
+    border: .1rem solid white;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 2rem;
+}
+
 .card-nft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 30rem;
     width: 30rem;
     margin-top: 10rem;
@@ -200,6 +223,9 @@ p{
     align-items: center;
 }
 
+.text-price{
+    color:#54E762;
+}
 
 
 /* Details CSS */
