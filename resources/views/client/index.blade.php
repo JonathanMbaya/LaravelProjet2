@@ -4,10 +4,13 @@
 
 @section('content')
 
+    {{-- Condition d'affichage si un utilisateur est connecté --}}
+
+    @if (session('owners'))
 
     <p>Bonjour, {{session('owners')->name}} </p>
 
-
+    @endif
 
     <h1>NFT Store</h1>
 

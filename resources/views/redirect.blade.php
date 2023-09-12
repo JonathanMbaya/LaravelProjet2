@@ -6,7 +6,7 @@
 
 
     <a href="">
-        <p style="text-align: center">{{ session('status')}}</p>
+        <h1 style="text-align: center">{{ session('status')}}</h1>
     </a>
 
     <a href={{route('logout')}}>

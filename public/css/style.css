@@ -1,5 +1,9 @@
 nav{
     background-color: #717171 !important;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
 
 }
 
@@ -235,4 +239,18 @@ p{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+
+
+
+/* CSS Admin */
+
+table{
+    color: white;
+}
+
+td, tr{
+    width: 20%;
+    font-size: 1.5rem;
 }

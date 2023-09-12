@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/ddf42ed228.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -46,12 +48,31 @@
 
         </div>
 
+
         <div class="nav-identify">
+
+            @if (session('owners'))
+
+                <p class="text-price">{{session('owners')->wallet}} ETH <i class="fa-solid fa-wallet"></i></p>
+                <p>{{session('owners')->name}}</p>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('logout')}}">
+                        <button type="button" class="btn btn-primary">Déconnexion</button>
+                    </a>
+                </li>
+            
+
+            @else
+
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('logout')}}">
-                    <button type="button" class="btn btn-primary">Déconnexion</button>
+                <a class="nav-link active" aria-current="page" href="{{route('login')}}">
+                    <button type="button" class="btn btn-primary">Connexion</button>
                 </a>
             </li>
+
+            @endif
+
         </div>
 
     </ul>

@@ -33,6 +33,12 @@ Route::get('/redirect', function(){
 
 Route::get('/déconnexion', [OwnerController::class, 'logout'])->name('logout');
 
+// Partie admin
+
+Route::prefix('/admin')-> group (function(){
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'homeadmin']) -> name('homeadmin');
+
+});
 
 
 
@@ -48,7 +54,6 @@ Route::get('/{id}', [RouteController::class, 'detail'])->name('detail');
 
 
 
-// Partie admin
 
 
 
