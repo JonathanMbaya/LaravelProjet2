@@ -1,13 +1,14 @@
 @extends('base')
 
-@section ('title', 'Home - NFT Market')
+@section ('title', 'Liste des NFT - Mode administration')
 
 @section('content')
 
 
-    {{-- Affichage sans connexion --}}
 
-    <h1>Liste des NFT</h1>
+    <h1>Mode administration</h1>
+
+    <h2>Liste des NFT</h2>
 
     <p>
         <a class="nav-link active" aria-current="page" href="{{route('adminaddnft')}}">Ajouter NFT</a>
@@ -15,36 +16,38 @@
 
     <div class="all-nft">
 
+        {{-- tableau des liste des nft --}}
 
-    <table class="container-fluid">
+
+        <table class="container-fluid">
 
 
-        <tr>
-            <th>Id</th>
-            <th>Titre</th>
-            <th>Artiste</th>
-            <th>Propriétaire</th>
-            <th>Prix</th>
-            <th>Catégorie</th>
-            <th>Supprimer</th>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Artiste</th>
+                <th>Propriétaire</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Supprimer</th>
 
-        </tr>
+            </tr>
 
-        @foreach ($nfts as $nft)
+            @foreach ($nfts as $nft)
 
-        <tr>
-            <td>{{$nft->id}}</td>
-            <td>{{$nft->title}}</td>
-            <td>{{$nft->artist}}</td>
-            <td>{{$nft->owner_id}}</td>
-            <td>{{$nft->prix}} ETH</td>
-            <td>{{$nft->category}}</td>
-            <td><i class="fa-solid fa-trash"></i></td>
-        </tr>
+            <tr>
+                <td>{{$nft->id}}</td>
+                <td>{{$nft->title}}</td>
+                <td>{{$nft->artist}}</td>
+                <td>{{$nft->owner_id}}</td>
+                <td>{{$nft->prix}} ETH</td>
+                <td>{{$nft->category}}</td>
+                <td><i class="fa-solid fa-trash"></i></td>
+            </tr>
 
-        @endforeach
+            @endforeach
 
-    </table>
+        </table>
 
 
 

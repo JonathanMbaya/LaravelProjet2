@@ -1,6 +1,6 @@
 @extends('base')
 
-@section ('title', 'Home - NFT Market')
+@section ('title', 'Inscription - NFT Market')
 
 @section('content')
 

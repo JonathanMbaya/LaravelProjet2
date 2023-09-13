@@ -1,6 +1,6 @@
 @extends('base')
 
-@section ('title', 'Mode Administration')
+@section ('title', 'Mode Administration - Ajout NFT')
 
 @section('content')
 
@@ -10,7 +10,9 @@
     <h2>Ajouter un NFT</h2>
 
 
-    <form class="form-add col-12" action="/connexion/user" method="post">
+    {{-- Formulaire d'ajout des NFT --}}
+
+    <form class="form-add col-12" action="/admin/addnft" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="group-area col-md-6">
             <label for="title">Titre</label>
@@ -19,7 +21,7 @@
 
         <div class="group-area col-md-6">
             <label for="title">Artiste</label>
-            <input class="col-md-12" type="text" name="artiste" id="artiste" placeholder="Nom de l'artiste">
+            <input class="col-md-12" type="text" name="artist" id="artist" placeholder="Nom de l'artiste">
         </div>
 
         <div class="group-area col-md-6">
@@ -66,6 +68,13 @@
 
         <input class="btn-submit" type="submit" value="Ajouter">
     </form>
+
+
+    @if (session('status'))
+        <a href="">
+            <p style="text-align: center">{{ session('status')}}</p>
+        </a>
+    @endif
 
 
 

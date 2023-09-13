@@ -8,10 +8,9 @@
     <h1>Mode administration</h1>
 
 
-
-
     <table class="container-fluid">
 
+        {{-- tableau des liste des utilisateurs --}}
 
         <tr>
             <th>Id</th>
@@ -24,24 +23,17 @@
 
         @foreach ($owners as $owner)
 
-        <tr>
-            <td>{{$owner->id}}</td>
-            <td>{{$owner->name}}</td>
-            <td>{{$owner->email}}</td>
-            <td>{{$owner->wallet}} ETH</td>
-            <td>{{$owner->created_at}}</td>
-        </tr>
+            <tr>
+                <td>{{$owner->id}}</td>
+                <td>{{$owner->name}}</td>
+                <td>{{$owner->email}}</td>
+                <td>{{$owner->wallet}} ETH</td>
+                <td>{{$owner->created_at}}</td>
+            </tr>
 
         @endforeach
 
     </table>
-
-
-
-
-
-
-    </div>
 
 
 @endsection

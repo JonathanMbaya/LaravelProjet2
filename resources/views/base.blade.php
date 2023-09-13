@@ -23,98 +23,96 @@
 </head>
 <body>
 
-<nav class="navbar-expand-lg navbar-light">
+    <nav class="navbar-expand-lg navbar-light">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <ul class="navbar-nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
 
-        @if((session('owners')) && session()->get('owners')->name === 'admin')
-
-        <a class="navbar-brand"
-        href="{{route('adminhomeadmin')}}">
-            <img class="logo-nft" src="images/nftlogo.png" alt="">
-        </a>
-
-        @else
-
-        <a class="navbar-brand"
-        href="{{route('index')}}">
-            <img class="logo-nft" src="images/nftlogo.png" alt="">
-        </a>
-
-        @endif
-
-
-        <div class="nav-nav">
+        <ul class="navbar-nav">
 
 
             @if((session('owners')) && session()->get('owners')->name === 'admin')
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('adminhomeadmin')}}">Liste des utilisateurs</a>
-                </li>
+            <a class="navbar-brand"
+            href="{{route('adminhomeadmin')}}">
+                <img class="logo-nft" src="images/nftlogo.png" alt="">
+            </a>
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('adminnftlist')}}">Liste des NFT</a>
-                </li>
+            @else
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('adminaddnft')}}">Ajouter NFT</a>
-                </li>
+            <a class="navbar-brand"
+            href="{{route('index')}}">
+                <img class="logo-nft" src="images/nftlogo.png" alt="">
+            </a>
+
+            @endif
+
+
+            <div class="nav-nav">
+
+
+                @if((session('owners')) && session()->get('owners')->name === 'admin')
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('adminhomeadmin')}}">Liste des utilisateurs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('adminnftlist')}}">Liste des NFT</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('adminaddnft')}}">Ajouter NFT</a>
+                    </li>
+
+
+                    @else
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('index')}}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('collection')}}">Collection</a>
+                    </li>
+
+
+                @endif
+
+            </div>
+
+
+            <div class="nav-identify">
+
+                @if (session('owners'))
+
+                    <p class="text-price">{{session('owners')->wallet}} ETH <i class="fa-solid fa-wallet"></i></p>
+
+                    <p>{{session('owners')->name}}</p>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('logout')}}">
+                            <button type="button" class="btn btn-primary">Déconnexion</button>
+                        </a>
+                    </li>
 
 
                 @else
 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('login')}}">
+                            <button type="button" class="btn btn-primary">Connexion</button>
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('index')}}">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('collection')}}">Collection</a>
-                </li>
+                @endif
 
+            </div>
 
-            @endif
-
-
-
-
-        </div>
-
-
-        <div class="nav-identify">
-
-            @if (session('owners'))
-
-                <p class="text-price">{{session('owners')->wallet}} ETH <i class="fa-solid fa-wallet"></i></p>
-                <p>{{session('owners')->name}}</p>
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('logout')}}">
-                        <button type="button" class="btn btn-primary">Déconnexion</button>
-                    </a>
-                </li>
-
-
-            @else
-
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('login')}}">
-                    <button type="button" class="btn btn-primary">Connexion</button>
-                </a>
-            </li>
-
-            @endif
-
-        </div>
-
-    </ul>
-</nav>
+        </ul>
+    </nav>
 
     <div class="container animate__animated animate__bounceInRight">
         @yield('content')

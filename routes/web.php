@@ -34,14 +34,14 @@ Route::get('/redirect', function(){
 
 Route::get('/déconnexion', [OwnerController::class, 'logout'])->name('logout');
 
-// Partie admin
+// Partie admin,fin avec le préfixe uri /admin
 
 Route::prefix('/admin')->name('admin')-> group (function(){
     Route::get('/', [AdminController::class, 'homeadmin']) -> name('homeadmin');
     Route::get('/nftlist', [AdminController::class, 'nftlist']) -> name('nftlist');
-    
+
     Route::get('/addnft', [AdminController::class, 'addnft']) -> name('addnft');
-    Route::get('/addnft/treatment', [AdminController::class, 'form_add']);
+    Route::post('/addnft', [AdminController::class, 'form_add']);
 
 });
 
