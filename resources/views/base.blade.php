@@ -79,7 +79,7 @@
                         <a class="nav-link" href="{{route('collection')}}">Collection</a>
                     </li>
 
-                    <div>
+                    <div class="navpart">
 
                         @if (session('owners'))
 

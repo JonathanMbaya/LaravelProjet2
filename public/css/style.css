@@ -10,6 +10,13 @@ nav{
     background-color: #717171;
 }
 
+.navpart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .navbar-toggler-icon{
     color: white !important;
 }
