@@ -12,10 +12,10 @@
 
     @endif
 
+
+    {{-- Affichage sans connexion --}}
+
     <h1>NFT Store</h1>
-
-
-
 
     <div class="all-nft">
 

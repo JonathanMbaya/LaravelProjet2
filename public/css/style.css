@@ -12,7 +12,7 @@ body {
     font-family: 'Oswald', sans-serif !important;
 }
 
-h1,h2,h3
+h1,h2,h3,label,span
 {
     color: white;
 }
@@ -129,6 +129,11 @@ header button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.form-add .group-area{
+    display: flex;
+    flex-direction: row;
 }
 
 

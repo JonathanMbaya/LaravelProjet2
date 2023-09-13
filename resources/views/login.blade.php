@@ -9,6 +9,9 @@
         <h1>Connexion</h1>
     </div>
 
+
+    {{-- Formulaire de connexion --}}
+
     <form class="form-login" action="/connexion/user" method="post">
         @csrf
         <div class="group-area">
@@ -22,11 +25,15 @@
         <input class="btn-submit" type="submit" value="Se connecter">
     </form>
 
+    {{-- Message d'information en cas d'erreur --}}
+
     @if (session('status'))
         <a href="">
             <p style="text-align: center">{{ session('status')}}</p>
         </a>
     @endif
+
+    {{-- Lien de redirection vers inscription --}}
 
     <div>
         <p style="text-align: center">

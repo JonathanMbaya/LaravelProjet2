@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\FilterController;
@@ -35,8 +36,12 @@ Route::get('/déconnexion', [OwnerController::class, 'logout'])->name('logout');
 
 // Partie admin
 
-Route::prefix('/admin')-> group (function(){
-    Route::get('/', [\App\Http\Controllers\AdminController::class, 'homeadmin']) -> name('homeadmin');
+Route::prefix('/admin')->name('admin')-> group (function(){
+    Route::get('/', [AdminController::class, 'homeadmin']) -> name('homeadmin');
+    Route::get('/nftlist', [AdminController::class, 'nftlist']) -> name('nftlist');
+    
+    Route::get('/addnft', [AdminController::class, 'addnft']) -> name('addnft');
+    Route::get('/addnft/treatment', [AdminController::class, 'form_add']);
 
 });
 

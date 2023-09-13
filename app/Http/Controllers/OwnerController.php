@@ -51,6 +51,9 @@ class OwnerController extends Controller
     // Fonction route de traitement connexion
 
     public function form_login(Request $request) {
+
+        // On vérifie d'abord les données que ces données soient bien présent dans les champs
+        
         $request->validate([
             'email' => 'email|required',
             'password' => 'required|min:8'
@@ -62,11 +65,26 @@ class OwnerController extends Controller
             if(Hash::check($request->input('password'), $owners->password)){
                 $request-> session()->put('owners', $owners);
 
-                return redirect('/');
-            }else{
+                // Si on se connecte ne tant que admin on est redirigé vers la page admin
+                if ($request-> session()->get('owners')->name === 'admin'){
+                    return redirect('/admin');
+                }
+                // Sinon vers la page d'accueil
+                else {
+                    return redirect('/');
+                }
+
+            }
+
+            // En cas d'erreur on reçoit un message
+
+            else{
                 return back()-> with('status', "Identifiant ou mot de passe incorrect");
             }
         }
+
+
+        // En cas d'erreur on reçoit un message
 
         else {
             return back()-> with('status', "Désolé! Vos données ne sont pas reconnues");

@@ -32,19 +32,57 @@
 
     <ul class="navbar-nav">
 
-        <a class="navbar-brand" href="{{route('index')}}">
+
+        @if((session('owners')) && session()->get('owners')->name === 'admin')
+
+        <a class="navbar-brand"
+        href="{{route('adminhomeadmin')}}">
             <img class="logo-nft" src="images/nftlogo.png" alt="">
         </a>
 
+        @else
+
+        <a class="navbar-brand"
+        href="{{route('index')}}">
+            <img class="logo-nft" src="images/nftlogo.png" alt="">
+        </a>
+
+        @endif
+
+
         <div class="nav-nav">
 
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('index')}}">Accueil</a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('collection')}}">Collection</a>
-            </li>
+            @if((session('owners')) && session()->get('owners')->name === 'admin')
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('adminhomeadmin')}}">Liste des utilisateurs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('adminnftlist')}}">Liste des NFT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('adminaddnft')}}">Ajouter NFT</a>
+                </li>
+
+
+                @else
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('index')}}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('collection')}}">Collection</a>
+                </li>
+
+
+            @endif
+
+
+
 
         </div>
 
@@ -61,7 +99,7 @@
                         <button type="button" class="btn btn-primary">Déconnexion</button>
                     </a>
                 </li>
-            
+
 
             @else
 
