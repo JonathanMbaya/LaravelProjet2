@@ -19,12 +19,15 @@ class RouteController extends Controller
         $nfts = Nft::all();
 
         if ($request-> session()->get('owners')){
+
             return view('client/index', [
                 'nfts' => $nfts
             ])->with('owners');
+
         }
 
         else {
+
             return view('client/index', [
                 'nfts' => $nfts
             ]);
@@ -42,11 +45,11 @@ class RouteController extends Controller
     {
         $nft = Nft::find($id);
 
-            return view('client/detail',
-                [
-                    'nft' => $nft
-                ]
-            );
+        return view('client/detail',
+            [
+                'nft' => $nft
+            ]
+        );
 
         return $nft;
     }
@@ -63,7 +66,6 @@ class RouteController extends Controller
         else{
             return view('client/collection');
         }
-
 
     }
 

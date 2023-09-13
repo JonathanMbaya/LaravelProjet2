@@ -47,7 +47,6 @@ class AdminController extends Controller
 
     public function addnft():View {
 
-
         return view('admin\addnft');
 
     }
@@ -55,7 +54,6 @@ class AdminController extends Controller
 
     public function form_add(Request $request){
 
-        Storage::disk('public')->put('images',$request->file('image'));
 
         $request->validate([
             'title' => 'required',
@@ -81,7 +79,6 @@ class AdminController extends Controller
         $nfts-> save();
 
         return redirect('/admin/addnft')->with('status', 'Votre NFT a bien été ajouté !');
-
 
     }
 
